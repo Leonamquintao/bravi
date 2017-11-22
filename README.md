@@ -8,3 +8,5 @@ this repo is destined to the Bravi Technical Assessment
 `npm install express`
 
 `npm install body-parser`
+
+### Run 'http://localhost:3000/' in your browser
