@@ -1,12 +1,16 @@
 # Bravi
-this repo is destined to the Bravi Technical Assessment
+This repo is destined to the Bravi Technical Assessment
 
-# Instructions:
+# Project Instructions:
 
-## please make sure that all commands are exected:
+## Please make sure that all commands are executed:
 
 `npm install express`
 
 `npm install body-parser`
+
+## start the node.js server:
+
+`node app.js`
 
 ### Run 'http://localhost:3000/' in your browser
