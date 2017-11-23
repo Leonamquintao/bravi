@@ -5,6 +5,8 @@ This repo is destined to the Bravi Technical Assessment
 
 clone the repository: `git clone https://github.com/Leonamquintao/bravi.git`
 
+cd into the project folder `cd bravi/`
+
 ## Please make sure that all commands are executed:
 
 `npm install express`
