@@ -17,7 +17,7 @@ clone the repository: `git clone https://github.com/Leonamquintao/bravi.git`
 
 ## Create the database configurations:
 
-see the '.env-example', and create a '.env' file
+see the '.env-example', and create a '.env' file with your MySql credentials.
 
 ## Run:
 
