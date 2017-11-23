@@ -1,15 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" ng-app="bravi-weather" ng-controller="WeatherCtrl">
 
   <head>
     <meta charset="utf-8">
     <title>Bravi - Weather in my city</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" type="image/png" href="images/bravi-logo.png" />
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/weather.js"></script>
   </head>
 
   <body>
-    <p>Weather in my city</p>
+
+    <div class="container">
+
+      <div class="logo">
+        <img src="images/bravi.png" alt="">
+      </div>
+
+      <form class="center">
+        <input class="form-control" type="text" ng-model="city.name" placeholder="enter the city..."><br /><br />
+        <button class="btn btn-primary full" ng-click="searchCity(city)">Search</button>
+      </form>
+
+      <div class="table-area">
+        <p ng-if="consults.length > 0"> Please select the city below </p>
+        <table ng-if="consults.length > 0" id="contacts">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country</th>
+          </tr>
+
+          <tr ng-repeat="con in consults" ng-click="consultWeather(con)">
+            <td>{{ con.id }}</td>
+            <td>{{ con.name }}</td>
+            <td>{{ con.country }}</td>
+          </tr>
+
+        </table>
+
+        <table ng-if="cityConditions.length > 0" id="contacts">
+          <tr>
+            <th>Time</th>
+            <th>MAX</th>
+            <th>MIN</th>
+            <th>Humidity</th>
+          </tr>
+
+          <tr ng-repeat="wt in cityConditions">
+            <td>{{ wt.dt_txt }}</td>
+            <td>{{ (wt.main.temp_max) - 273.15 }}º</td>
+            <td>{{ (wt.main.temp_min) - 273.15 }}º</td>
+            <td>{{ wt.main.humidity }}%</td>
+          </tr>
+
+        </table>
+
+      </div>
+
+    </div>
+
   </body>
 
 </html>

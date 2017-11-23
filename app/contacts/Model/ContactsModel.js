@@ -19,6 +19,7 @@ const saveNewContact = (data) => {
   return new Promise((resolve, reject) => {
     cn.query('INSERT INTO contacts SET ?', data, (err, result) => {
       if(!err) {
+        data.id = result.insertId
         resolve(data)
       } else {
         reject(err)

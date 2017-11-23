@@ -12,8 +12,8 @@ app.controller('ContactsCtrl', function($scope, $http) {
   }
 
   $scope.addContatct = function(contact) {
-    $scope.contacts.push(contact);
     $http.post('http://localhost:3000/contacts', contact).then((res) => {
+      $scope.contacts.push(res.data);
       delete $scope.contact;
     });
   }
