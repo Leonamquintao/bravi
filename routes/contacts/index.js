@@ -16,7 +16,7 @@ router.post('/contacts', (request, response) => {
 })
 
 /* Update */
-router.put('/contacts/:conId', (request, response) => {
+router.put('/contacts', (request, response) => {
   Contacts.updateContact(request.body).then((data) => {
     response.status(200).send(data)
   })
@@ -24,7 +24,7 @@ router.put('/contacts/:conId', (request, response) => {
 
 /* Delete or destroy */
 router.delete('/contacts/:conId', (request, response) => {
-  User.deleteContactById(request.params.userId).then((data) => {
+  Contacts.deleteContactById(request.params.conId).then((data) => {
     response.status(200).send(data)
   })
 })

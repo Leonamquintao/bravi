@@ -64,6 +64,13 @@ body {
   margin: 0 auto;
 }
 
+.form-title {
+  display: table;
+  margin: 3 auto;
+  font-family: 'Oswald', sans-serif;
+  color: #5e5f60;
+}
+
 .form-control {
   display: block;
   width: 300px;
@@ -76,6 +83,11 @@ body {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.selct {
+  width: 312px;
+  height: 40px;
 }
 
 .btn {
@@ -100,10 +112,29 @@ body {
   border-radius: 4px;
 }
 
+.full {
+  display: block;
+  width: 312px;
+  height: 40px;
+  padding: 3px 6px;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #a80b2b;
+  border-color: #5e0114;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #077772;
+  border-color: #044c49;
 }
 
 .msg-present {
@@ -113,4 +144,36 @@ body {
 .bold {
   color: #f326b4;
   font-weight: 700;
+}
+
+.jumbotron {
+  width: 500px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contacts {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#contacts td, #contacts th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#contacts tr:nth-child(even){background-color: #f2f2f2;}
+
+#contacts tr:hover {background-color: #ddd;}
+
+#contacts th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: white;
 }

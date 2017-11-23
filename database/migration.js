@@ -35,7 +35,6 @@ var migrate = (() => {
     name varchar(255) NOT NULL,
     email varchar(255) DEFAULT NULL,
     gender varchar(10) DEFAULT NULL,
-    age varchar(10) DEFAULT NULL,
     phone varchar(20) DEFAULT NULL,
     whatsapp varchar(20) DEFAULT NULL,
     created_at timestamp NULL DEFAULT NULL,

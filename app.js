@@ -9,7 +9,7 @@ app.use(express.static('client'))
 app.use(bodyParser.json({limit: '20mb'}))
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }))
 
-//app.use('/', ...Routes)
+app.use('/', ...Routes)
 
 app.listen(port, () => {
   console.log('----------------------------------------------------')

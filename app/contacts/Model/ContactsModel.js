@@ -19,9 +19,7 @@ const saveNewContact = (data) => {
   return new Promise((resolve, reject) => {
     cn.query('INSERT INTO contacts SET ?', data, (err, result) => {
       if(!err) {
-        authUser(post).then((pData) => {
-          resolve(pData)
-        })
+        resolve(data)
       } else {
         reject(err)
       }
@@ -32,8 +30,8 @@ const saveNewContact = (data) => {
 // -------------------------------------------------------------------------- //
 const updateContact = (data) => {
   return new Promise((resolve, reject) => {
-    let query = 'UPDATE contacts SET ? WHERE id = '+ data.id
-    cn.query(query, data, (err, result) => {
+    let query = 'UPDATE contacts SET name = ?, gender = ?, phone = ?, email = ?, whatsapp =? WHERE id = '+ data.id
+    cn.query(query, [ data.name, data.gender, data.phone, data.email, data.whatsapp ], (err, result) => {
       if(!err) {
         resolve(result)
       } else {

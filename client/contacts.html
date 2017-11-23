@@ -1,44 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" ng-app="bravi" ng-controller="ContactsCtrl">
 
   <head>
     <meta charset="utf-8">
     <title>Bravi - Contact List</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="images/bravi-logo.png" />
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
 
   <body>
-    <h1 class="form-title">Register a new contact</h1>
 
-    <form action="/contacts" method="post">
+    <div class="jumbotron">
 
-      <label for="name">Name:</label>
-      <input class="form-control" type="text" name="name" value="" placeholder="enter contact name..."><br /><br />
+      <div class="logo">
+        <img src="images/bravi.png" alt="">
+      </div>
 
-      <label for="age">Age:</label>
-      <input class="form-control" type="number" name="age" value="01"><br /><br />
+      <div class="list-container">
+        <h1 class="form-title">Contact list</h1>
 
-      <label for="age">Gender:</label>
-      <select class="form-control selct">
-        <option value="select" selected>Select</option>
-        <option value="f">Female</option>
-        <option value="m">Male</option>
-      </select><br /><br />
+        <table id="contacts">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>whatsapp</th>
+            <th></th>
+            <th></th>
+          </tr>
 
-      <label for="name">Phone:</label>
-      <input class="form-control" type="text" name="phone" value="" placeholder="enter the phone number..."><br /><br />
+          <tr ng-repeat="contact in contacts">
+            <td>{{ contact.id }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.gender }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.whatsapp }}</td>
+            <td><button class="btn btn-secondary" ng-click="editContatct(contact)">Edit</button></td>
+            <td><button class="btn btn-danger" ng-click="removeContatct(contact)">Delete</button></td>
+          </tr>
 
-      <label for="name">Email:</label>
-      <input class="form-control" type="text" name="email" value="" placeholder="enter the email..."><br /><br />
+        </table>
+      </div>
 
-      <label for="name">WhatsApp:</label>
-      <input class="form-control" type="text" name="whatsapp" value="" placeholder="enter the whatsapp..."><br /><br />
+      <div class="form-container">
+        <h1 class="form-title">Register a new contact</h1>
 
-      <input class="btn btn-primary" type="submit" value="save">
+        <form method="post">
 
-    </form>
+          <input class="form-control" type="text" name="name" ng-model="contact.name" placeholder="enter contact name..."><br />
 
+          <select class="form-control selct" ng-model="contact.gender">
+            <option value="">select gender</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select><br />
+
+          <input class="form-control" type="text" ng-model="contact.phone" placeholder="enter the phone number..."><br />
+
+          <input class="form-control" type="text" ng-model="contact.email" placeholder="enter the email..."><br />
+
+          <input class="form-control" type="text" ng-model="contact.whatsapp" placeholder="enter the whatsapp..."><br />
+
+          <button class="btn btn-primary full" ng-click="addContatct(contact)" ng-if="save">Save</button><br />
+
+          <button class="btn btn-primary full" ng-click="saveContactChanges(contact)" ng-if="edit">Save changes</button><br />
+
+        </form>
+      </div>
+    </div>
   </body>
 
 </html>
