@@ -9,7 +9,36 @@
   </head>
 
   <body>
-    <p>Contact List</p>
+    <h1 class="form-title">Register a new contact</h1>
+
+    <form action="/contacts" method="post">
+
+      <label for="name">Name:</label>
+      <input class="form-control" type="text" name="name" value="" placeholder="enter contact name..."><br /><br />
+
+      <label for="age">Age:</label>
+      <input class="form-control" type="number" name="age" value="01"><br /><br />
+
+      <label for="age">Gender:</label>
+      <select class="form-control selct">
+        <option value="select" selected>Select</option>
+        <option value="f">Female</option>
+        <option value="m">Male</option>
+      </select><br /><br />
+
+      <label for="name">Phone:</label>
+      <input class="form-control" type="text" name="phone" value="" placeholder="enter the phone number..."><br /><br />
+
+      <label for="name">Email:</label>
+      <input class="form-control" type="text" name="email" value="" placeholder="enter the email..."><br /><br />
+
+      <label for="name">WhatsApp:</label>
+      <input class="form-control" type="text" name="whatsapp" value="" placeholder="enter the whatsapp..."><br /><br />
+
+      <input class="btn btn-primary" type="submit" value="save">
+
+    </form>
+
   </body>
 
 </html>

@@ -1,8 +1,5 @@
-//const UserRoute = require('./users')
+const ContactsRoute = require('./contacts')
 
-
-//module.exports = [
-  //UserRoute
-//]
-
-console.log('entrei nas rotas!!!')
+module.exports = [
+  ContactsRoute,
+]
